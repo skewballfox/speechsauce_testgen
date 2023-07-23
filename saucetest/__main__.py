@@ -11,13 +11,13 @@ from saucetest.test_gen import gen_fidelity_test, array_func
 
 
 win_length = n_fft = 512
-hop_length = win_length // 2
+hop_length = win_length // 4
 
 
 stft_args = {
     "n_fft": 512,
     "hop_length": hop_length,
-    "win_length": win_length,
+    # "win_length": win_length,
     "center": True,
     # "window": "hann",
     # "pad_mode": "constant",
@@ -33,8 +33,8 @@ stft_func: array_func = lambda x, args: stft(
 
 
 if __name__ == "__main__":
-    test_path = Path("testData")
-    func_name = "stft"
+    test_path = Path("data")
+    func_name = "stft2"
     func_callable = stft_func
     func_args = stft_args
     input_array = np.random.rand(2, 1024)
