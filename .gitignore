@@ -1,1 +1,4 @@
 /pyproject.toml
+test_data/
+
+.mypy_cache/
